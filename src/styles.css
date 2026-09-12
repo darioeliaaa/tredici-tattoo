@@ -335,12 +335,20 @@ main { display: block; }
   font-size: 11px; letter-spacing: .08em; color: var(--ink-faint);
 }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 28px; }
-.field { display: flex; flex-direction: column; gap: 8px; }
+.field {
+  display: flex; flex-direction: column; gap: 8px;
+  /* Senza questo, un <select> con testo lungo nelle option (es. i nomi
+     degli artisti) impone la sua larghezza "max-content" alla colonna
+     della grid, che quindi sfora oltre il contenitore invece di andare
+     a capo — la classica "grid blowout". */
+  min-width: 0;
+}
 .field--full { grid-column: 1 / -1; }
 .field label {
   font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint);
 }
 .field input, .field select, .field textarea {
+  width: 100%; min-width: 0;
   font-family: var(--body); font-size: 15.5px; color: var(--ink);
   background: transparent; border: none; border-bottom: 1px solid var(--line-strong);
   padding: 8px 2px; border-radius: 0; resize: vertical;
