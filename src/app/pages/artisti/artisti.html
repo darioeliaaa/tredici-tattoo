@@ -1,0 +1,25 @@
+<section class="section section--tight">
+  <div class="wrap wrap--narrow">
+    <div class="section-head">
+      <span class="kicker">Chi tiene l'ago</span>
+      <h2>Due tatuatori, due mani diverse</h2>
+      <p>Niente ospiti a rotazione: chi prenota da noi sa esattamente chi troverà in studio.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap">
+    @for (a of artisti; track a.nome) {
+      <article class="artist">
+        <app-flash-icon [name]="a.icona" variant="artist__sigil flash-icon--stencil" />
+        <div>
+          <h3 class="artist__name">{{ a.nome }}</h3>
+          <span class="artist__role">{{ a.ruolo }}</span>
+          <p class="artist__bio">{{ a.bio }}</p>
+          <span class="artist__meta">{{ a.meta }}</span>
+        </div>
+      </article>
+    }
+  </div>
+</section>

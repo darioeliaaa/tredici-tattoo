@@ -1,0 +1,23 @@
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Foglio flash</span>
+      <h2>Quello che è appeso in studio</h2>
+      <p>Pezzi già disegnati, pronti a prezzo fisso. Se uno ti piace ma è già stato tatuato, ne disegniamo una tua versione — mai due identici sulla stessa pelle.</p>
+    </div>
+
+    <div class="sheets-tabs" role="tablist" aria-label="Filtra per foglio">
+      @for (s of sheets; track s.id) {
+        <button role="tab" [attr.aria-selected]="selected() === s.id" (click)="selected.set(s.id)">{{ s.label }}</button>
+      }
+    </div>
+
+    <div class="sheet-grid">
+      @for (item of items; track item.num) {
+        <app-flash-card [item]="item" [hidden]="isHidden(item)" />
+      }
+    </div>
+
+    <p class="note-box">Le foto reali dei lavori finiti sono sul nostro Instagram — questo foglio mostra solo i disegni disponibili da prenotare così come sono.</p>
+  </div>
+</section>

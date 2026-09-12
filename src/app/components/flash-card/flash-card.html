@@ -1,0 +1,8 @@
+<span class="flash-card__num">{{ item().num }}</span>
+<app-flash-icon [name]="item().icon" variant="flash-card__icon" />
+<span class="flash-card__name">{{ item().name }}</span>
+<span class="flash-card__meta">{{ item().style }} &middot; {{ item().size }}</span>
+<span class="flash-card__price">{{ item().price }}€</span>
+@if (item().taken) {
+  <span class="flash-card__tag">Già tatuato</span>
+}

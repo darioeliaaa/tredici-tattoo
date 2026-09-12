@@ -1,0 +1,16 @@
+<header class="shingle">
+  <div class="wrap shingle__inner">
+    <div>
+      <a routerLink="/" class="shingle__mark">TREDICI</a>
+      <span class="shingle__sub">Studio di tatuaggi &middot; Cosenza, centro storico</span>
+    </div>
+    <nav class="nav" aria-label="Principale">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [ariaCurrentWhenActive]="'page'">Home</a>
+      <a routerLink="/galleria" routerLinkActive="active" [ariaCurrentWhenActive]="'page'">Foglio Flash</a>
+      <a routerLink="/artisti" routerLinkActive="active" [ariaCurrentWhenActive]="'page'">Artisti</a>
+      <a routerLink="/stili-prezzi" routerLinkActive="active" [ariaCurrentWhenActive]="'page'">Stili &amp; Prezzi</a>
+      <a routerLink="/prenota" routerLinkActive="active" [ariaCurrentWhenActive]="'page'">Prenota</a>
+      <a routerLink="/contatti" routerLinkActive="active" [ariaCurrentWhenActive]="'page'">Contatti</a>
+    </nav>
+  </div>
+</header>

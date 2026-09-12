@@ -1,0 +1,74 @@
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div>
+        <span class="kicker">Studio di tatuaggi indipendente</span>
+        <h1 class="hero__title">TREDICI</h1>
+        <span class="hero__hand">— su appuntamento, ogni venerdì flash-day —</span>
+        <p class="hero__lede">
+          Due tatuatori, uno studio, un solo registro: quello che entra
+          esce con un lavoro fatto bene. Blackwork, fineline e
+          tradizionale, nel cuore del centro storico di Cosenza.
+        </p>
+        <div class="hero__actions">
+          <a routerLink="/prenota" class="stamp">Prenota una consulenza</a>
+          <a routerLink="/galleria" class="text-link">guarda il foglio flash →</a>
+        </div>
+
+        <div class="ticket">
+          <div><b>Dal 2019</b>due tatuatori residenti</div>
+          <div><b>Aut. San. n. 0412/CS</b>aghi monouso, autoclave in studio</div>
+          <div><b>Chiuso il lunedì</b>mar–sab, su appuntamento</div>
+        </div>
+      </div>
+
+      <app-flash-icon name="occhio" variant="hero__mark" />
+    </div>
+  </div>
+</section>
+
+<section class="section" id="foglio">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Ultimi arrivi sul foglio</h2>
+      <p>Pezzi flash pronti — disegnati per essere tatuati così come sono, a prezzo fisso. Il resto del foglio è in <a class="text-link" routerLink="/galleria">galleria</a>.</p>
+    </div>
+
+    <div class="sheet-grid">
+      @for (item of teaser; track item.num) {
+        <app-flash-card [item]="item" />
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--shade">
+  <div class="wrap wrap--narrow">
+    <div class="section-head">
+      <h2>Come funziona, dal primo messaggio alla seduta</h2>
+    </div>
+    <div class="styles-list">
+      <div class="style-item">
+        <app-flash-icon name="fulmine" variant="style-item__icon" />
+        <div>
+          <h3>1. Consulenza</h3>
+          <p>Scrivi tramite il form di <a class="text-link" routerLink="/prenota">prenotazione</a>: stile, zona del corpo, dimensione indicativa. Rispondiamo entro 48 ore con un preventivo di massima.</p>
+        </div>
+      </div>
+      <div class="style-item">
+        <app-flash-icon name="ancora" variant="style-item__icon" />
+        <div>
+          <h3>2. Stencil</h3>
+          <p>Il giorno della seduta il disegno definitivo viene ricalcato sulla pelle con lo stencil — quel viola che vedi in giro su questo sito è esattamente quello. Ultime modifiche prima di iniziare.</p>
+        </div>
+      </div>
+      <div class="style-item">
+        <app-flash-icon name="occhio" variant="style-item__icon" />
+        <div>
+          <h3>3. Seduta e cura</h3>
+          <p>Ti diamo le istruzioni scritte per la guarigione. Per i pezzi grandi, più sedute a distanza di 4-6 settimane.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,74 @@
+<section class="section section--tight">
+  <div class="wrap wrap--narrow">
+    <div class="section-head">
+      <span class="kicker">Scheda di richiesta</span>
+      <h2>Raccontaci cosa hai in mente</h2>
+      <p>Più dettagli ci dai, più il preventivo che ricevi sarà vicino a quello vero. Rispondiamo entro 48 ore.</p>
+    </div>
+
+    <form class="form-sheet" data-doc-id="Scheda richiesta — TREDICI" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-grid">
+        <div class="field">
+          <label for="nome">Nome e cognome</label>
+          <input type="text" id="nome" formControlName="nome" autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="contatto">Email o telefono</label>
+          <input type="text" id="contatto" formControlName="contatto" />
+        </div>
+
+        <div class="field">
+          <label for="artista">Artista preferito</label>
+          <select id="artista" formControlName="artista">
+            <option value="indifferente">Indifferente</option>
+            <option value="vale">Valentina — fineline/blackwork</option>
+            <option value="marco">Marco "Orso" — tradizionale</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="stile">Stile</label>
+          <select id="stile" formControlName="stile">
+            <option value="blackwork">Blackwork</option>
+            <option value="fineline">Fineline</option>
+            <option value="tradizionale">Tradizionale</option>
+            <option value="geometrico">Geometrico</option>
+            <option value="flash">Un pezzo dal foglio flash</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="zona">Zona del corpo</label>
+          <input type="text" id="zona" formControlName="zona" placeholder="Es. avambraccio interno" />
+        </div>
+        <div class="field">
+          <label for="dimensione">Dimensione indicativa</label>
+          <input type="text" id="dimensione" formControlName="dimensione" placeholder="Es. circa 10x10 cm" />
+        </div>
+
+        <div class="field field--full field--file">
+          <span>Hai un'immagine di riferimento? Carica pure uno schizzo, una foto della zona, o un'ispirazione</span>
+          <input type="file" accept="image/*" (change)="onFileChange($event)" />
+          @if (fileName(); as f) { <span>File selezionato: {{ f }}</span> }
+        </div>
+
+        <div class="field field--full">
+          <label for="messaggio">Racconta l'idea</label>
+          <textarea id="messaggio" formControlName="messaggio" rows="4" placeholder="Anche un'idea vaga va benissimo — ne parliamo insieme in consulenza."></textarea>
+        </div>
+      </div>
+
+      <div class="form__foot">
+        <button type="submit" class="stamp">Invia la richiesta</button>
+        @if (status(); as s) {
+          <p class="form__status" [attr.data-state]="s.state">{{ s.text }}</p>
+        }
+      </div>
+    </form>
+
+    <p class="note-box">
+      Alla conferma dell'appuntamento chiediamo una caparra di 30€,
+      scalata dal prezzo finale — copre il tempo che dedichiamo al
+      disegno preparatorio prima ancora di accendere la macchinetta.
+    </p>
+  </div>
+</section>

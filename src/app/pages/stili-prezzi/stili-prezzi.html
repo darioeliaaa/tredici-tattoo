@@ -1,0 +1,61 @@
+<section class="section section--tight">
+  <div class="wrap wrap--narrow">
+    <div class="section-head">
+      <span class="kicker">Cosa facciamo</span>
+      <h2>Stili</h2>
+    </div>
+
+    <div class="styles-list">
+      @for (s of stili; track s.nome) {
+        <div class="style-item">
+          <app-flash-icon [name]="s.icona" variant="style-item__icon" />
+          <div>
+            <h3>{{ s.nome }}</h3>
+            <p>{{ s.testo }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--shade">
+  <div class="wrap wrap--narrow">
+    <div class="section-head">
+      <span class="kicker">Listino</span>
+      <h2>Prezzi indicativi</h2>
+      <p>Ogni tatuaggio è diverso: questi sono punti di partenza, il preventivo esatto arriva dopo la consulenza.</p>
+    </div>
+
+    <div class="ledger-wrap">
+      <table class="ledger">
+        <thead>
+          <tr><th>Tipo</th><th>Minimo</th><th>Tariffa oraria</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          @for (r of listino; track r.tipo) {
+            <tr>
+              <td class="style-name">{{ r.tipo }}</td>
+              <td class="num">{{ r.minimo }}</td>
+              <td>{{ r.oraria }}</td>
+              <td>
+                @if (r.tipo === 'Flash (foglio)') {
+                  Prezzo fisso, vedi <a class="text-link" routerLink="/galleria">foglio flash</a>
+                } @else {
+                  {{ r.note }}
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note-box">
+      Ogni prenotazione richiede una caparra di 30€, scalata dal prezzo
+      finale: conferma il posto e copre il tempo del disegno preparatorio.
+      Non è rimborsabile in caso di disdetta a meno di 48 ore
+      dall'appuntamento.
+    </p>
+  </div>
+</section>
